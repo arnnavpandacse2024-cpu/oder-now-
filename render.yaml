@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: hyperlocal-delivery-network
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm install --save cors dotenv express mongoose
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: mongodb+srv://arnnav:cutiki@cluster0.t83s0ym.mongodb.net/?appName=Cluster0
